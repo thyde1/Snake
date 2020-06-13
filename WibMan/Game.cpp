@@ -1,0 +1,89 @@
+#include "Game.h"
+#include "Player.h"
+
+Game::Game()
+{
+	this->init();
+}
+
+Game::~Game()
+{
+}
+
+void Game::init()
+{
+	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
+	this->renderer = SDL_CreateRenderer(window, -1, 0);
+
+	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+
+	SDL_RenderClear(renderer);
+
+	SDL_RenderPresent(renderer);
+
+	this->gameObjects = *new std::list<GameObject*>();
+
+	this->instantiateObject()->addUpdater(new Player());
+
+	const int fps = 60;
+	const int frameDelay = 1000 / fps;
+
+	auto frameStart = SDL_GetTicks();
+	while (isRunning()) {
+		auto runningTime = SDL_GetTicks();
+		handleInput();
+		if (runningTime - frameStart >= frameDelay) {
+			update();
+			frameStart = runningTime;
+		}
+		render();
+	}
+}
+
+bool Game::isRunning()
+{
+	return true;
+}
+
+void Game::handleInput()
+{
+	SDL_Event event;
+	std::list<SDL_Keysym> keys;
+	while (SDL_PollEvent(&event)) {
+		switch (event.type) {
+		case SDL_KEYDOWN:
+			keys.push_back(event.key.keysym);
+			break;
+		}
+	}
+
+	for (GameObject* gameObject : this->gameObjects)
+	{
+		gameObject->handleInput(keys);
+	}
+}
+
+void Game::update()
+{
+	for(GameObject* gameObject : this->gameObjects)
+	{
+		gameObject->update();
+	}
+}
+
+void Game::render()
+{
+	for (GameObject* gameObject : this->gameObjects)
+	{
+		gameObject->render();
+	}
+	SDL_RenderPresent(renderer);
+}
+
+GameObject* Game::instantiateObject()
+{
+	GameObject* object = new GameObject(this->renderer);
+	this->gameObjects.push_back(object);
+	return object;
+}
