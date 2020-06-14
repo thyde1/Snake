@@ -16,6 +16,7 @@ public:
 	GameObject* addUpdater(Updater* updater);
 	GameObject* addRenderer(Renderer* renderer);
 	GameObject* addComponent(Component* component);
+	GameObject* setGlobalPosition(int x, int y);
 	template <class T>
 	T getComponent()
 	{
@@ -26,6 +27,8 @@ public:
 				return castComponent;
 			}
 		}
+
+		return NULL;
 	}
 	Position* globalPosition;
 private:

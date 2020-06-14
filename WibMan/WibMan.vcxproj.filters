@@ -26,9 +26,6 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Updater.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
@@ -50,6 +47,15 @@
     <ClCompile Include="SnakeGame.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeData.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -60,9 +66,6 @@
     </ClInclude>
     <ClInclude Include="Position.h">
       <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Source Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Updater.h">
       <Filter>Source Files\Engine</Filter>
@@ -89,6 +92,9 @@
       <Filter>Source Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="SnakeGame.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,5 +7,5 @@ public:
 	virtual void setGameObject(GameObject* gameObject);
 	virtual void init();
 protected:
-	GameObject* gameObject;
+	GameObject* gameObject = nullptr;
 };

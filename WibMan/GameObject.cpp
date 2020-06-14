@@ -5,7 +5,7 @@
 GameObject::GameObject(SDL_Renderer* renderer)
 {
 	this->sdlRenderer = renderer;
-	this->globalPosition = new Position();
+	this->globalPosition = new Position(0, 0);
 }
 
 void GameObject::handleInput(std::list<SDL_Keysym> keys)
@@ -51,5 +51,11 @@ GameObject* GameObject::addComponent(Component* component)
 {
 	component->setGameObject(this);
 	this->components.push_back(component);
+	return this;
+}
+
+GameObject* GameObject::setGlobalPosition(int x, int y)
+{
+	this->globalPosition = new Position(x, y);
 	return this;
 }

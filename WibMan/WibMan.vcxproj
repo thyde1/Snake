@@ -149,9 +149,11 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Snake.cpp" />
     <ClCompile Include="PointRenderer.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SnakeData.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="SnakeRenderer.cpp" />
     <ClCompile Include="SquareRenderer.cpp" />
@@ -162,7 +164,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Snake.h" />
     <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Renderer.h" />

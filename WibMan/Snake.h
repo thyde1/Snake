@@ -6,9 +6,9 @@
 
 class SnakeData;
 
-class Player : public Updater {
+class Snake : public Updater {
 public:
-	Player(SnakeData* snakeData);
+	Snake(SnakeData* snakeData);
 	void init();
 	void update(int elapsed);
 	void handleInput(std::list<SDL_Keysym> keys);
