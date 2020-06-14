@@ -15,9 +15,7 @@ void Game::sdlInit()
 	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
 	this->renderer = SDL_CreateRenderer(window, -1, 0);
 
-	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-
-	SDL_RenderClear(renderer);
+	this->clearScreen();
 
 	SDL_RenderPresent(renderer);
 
@@ -80,6 +78,7 @@ void Game::update(int elapsed)
 
 void Game::render()
 {
+	this->clearScreen();
 	for (GameObject* gameObject : this->gameObjects)
 	{
 		gameObject->render();
@@ -92,4 +91,9 @@ GameObject* Game::instantiateObject()
 	GameObject* object = new GameObject(this->renderer);
 	this->gameObjects.push_back(object);
 	return object;
+}
+
+void Game::clearScreen() {
+	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+	SDL_RenderClear(renderer);
 }

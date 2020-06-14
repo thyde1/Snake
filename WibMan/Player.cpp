@@ -17,7 +17,6 @@ void Player::init()
 
 void Player::update(int elapsed)
 {
-	std::cout << this->snakeData->length;
 	switch (this->direction) {
 	case Direction::UP:
 		this->gameObject->globalPosition->y -= 10 * elapsed / 100;

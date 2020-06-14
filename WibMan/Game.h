@@ -21,4 +21,5 @@ public:
 private:
 	SDL_Renderer* renderer;
 	std::list<GameObject*> gameObjects;
+	void clearScreen();
 };
