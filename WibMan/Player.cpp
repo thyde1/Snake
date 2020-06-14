@@ -2,20 +2,20 @@
 #include <iostream>
 #include "Player.h"
 
-void Player::update()
+void Player::update(int elapsed)
 {
 	switch (this->direction) {
 	case Direction::UP:
-		this->gameObject->globalPosition->y -= 10;
+		this->gameObject->globalPosition->y -= 10 * elapsed / 100;
 		break;
 	case Direction::DOWN:
-		this->gameObject->globalPosition->y += 10;
+		this->gameObject->globalPosition->y += 10 * elapsed / 100;
 		break;
 	case Direction::LEFT:
-		this->gameObject->globalPosition->x -= 10;
+		this->gameObject->globalPosition->x -= 10 * elapsed / 100;
 		break;
 	case Direction::RIGHT:
-		this->gameObject->globalPosition->x += 10;
+		this->gameObject->globalPosition->x += 10 * elapsed / 100;
 		break;
 	}
 }

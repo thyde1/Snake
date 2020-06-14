@@ -12,7 +12,7 @@ public:
 	void init();
 	bool isRunning();
 	void handleInput();
-	void update();
+	void update(int elapsed);
 	void render();
 	GameObject* instantiateObject();
 

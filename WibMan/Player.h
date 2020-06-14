@@ -5,7 +5,7 @@
 
 class Player : public Updater {
 public:
-	void update();
+	void update(int elapsed);
 	void handleInput(std::list<SDL_Keysym> keys);
 private:
 	Direction direction;

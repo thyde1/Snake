@@ -30,14 +30,19 @@ void Game::init()
 	const int frameDelay = 1000 / fps;
 
 	auto frameStart = SDL_GetTicks();
+	auto lastUpdate = SDL_GetTicks();
 	while (isRunning()) {
 		auto runningTime = SDL_GetTicks();
-		handleInput();
-		if (runningTime - frameStart >= frameDelay) {
-			update();
-			frameStart = runningTime;
+		auto elapsed = runningTime - lastUpdate;
+		if (elapsed >= 10) {
+			handleInput();
+			update(elapsed);
+			lastUpdate = SDL_GetTicks();
 		}
-		render();
+		if (runningTime - frameStart >= frameDelay) {
+			frameStart = runningTime;
+			render();
+		}
 	}
 }
 
@@ -64,11 +69,11 @@ void Game::handleInput()
 	}
 }
 
-void Game::update()
+void Game::update(int elapsed)
 {
 	for(GameObject* gameObject : this->gameObjects)
 	{
-		gameObject->update();
+		gameObject->update(elapsed);
 	}
 }
 

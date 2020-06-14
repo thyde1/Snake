@@ -15,11 +15,11 @@ void GameObject::handleInput(std::list<SDL_Keysym> keys)
 	}
 }
 
-void GameObject::update()
+void GameObject::update(int elapsed)
 {
 	for (Updater* updater : this->updaters)
 	{
-		updater->update();
+		updater->update(elapsed);
 	}
 }
 

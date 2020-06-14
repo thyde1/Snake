@@ -9,7 +9,7 @@ class InputHandler;
 class GameObject {
 public:
 	GameObject(SDL_Renderer* renderer);
-	void update();
+	void update(int elapsed);
 	void handleInput(std::list<SDL_Keysym> keys);
 	void render();
 	GameObject* addUpdater(Updater* updater);
