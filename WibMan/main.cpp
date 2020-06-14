@@ -1,9 +1,9 @@
 #include "SDL.h"
-#include "Game.h"
+#include "SnakeGame.h"
 
 int main(int argc, char* argv[]) {
-	Game* game = new Game();
-	game->init();
+	Game* game = new SnakeGame();
+	game->start();
 
 	return 0;
 }

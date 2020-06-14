@@ -47,6 +47,9 @@
     <ClCompile Include="SnakeRenderer.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="SnakeGame.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -83,6 +86,9 @@
       <Filter>Source Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="SnakeData.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeGame.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
   </ItemGroup>

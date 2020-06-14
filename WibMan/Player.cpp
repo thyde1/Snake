@@ -4,10 +4,20 @@
 #include "Player.h"
 #include "SnakeData.h"
 
+Player::Player(SnakeData* snakeData)
+{
+	this->snakeData = snakeData;
+	this->direction = Direction::NONE;
+}
+
+void Player::init()
+{
+	this->snakeData = this->gameObject->getComponent<SnakeData*>();
+}
+
 void Player::update(int elapsed)
 {
-	SnakeData* snakeData = this->gameObject->getComponent<SnakeData*>();
-	std::cout << snakeData->length;
+	std::cout << this->snakeData->length;
 	switch (this->direction) {
 	case Direction::UP:
 		this->gameObject->globalPosition->y -= 10 * elapsed / 100;

@@ -1,19 +1,15 @@
 #include "Game.h"
-#include "Player.h"
-#include "SquareRenderer.h"
-#include "PointRenderer.h"
-#include "SnakeData.h"
 
 Game::Game()
 {
-	this->init();
+	this->sdlInit();
 }
 
 Game::~Game()
 {
 }
 
-void Game::init()
+void Game::sdlInit()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
@@ -26,30 +22,27 @@ void Game::init()
 	SDL_RenderPresent(renderer);
 
 	this->gameObjects = *new std::list<GameObject*>();
+}
 
-	this->instantiateObject()
-		->addUpdater(new Player())
-		->addRenderer(new SquareRenderer())
-		->addRenderer(new PointRenderer())
-		->addComponent(new SnakeData())
-		->addComponent(new Component());
-
+void Game::start()
+{
+	this->init();
 	const int fps = 60;
 	const int frameDelay = 1000 / fps;
 
 	auto frameStart = SDL_GetTicks();
 	auto lastUpdate = SDL_GetTicks();
-	while (isRunning()) {
+	while (this->isRunning()) {
 		auto runningTime = SDL_GetTicks();
 		auto elapsed = runningTime - lastUpdate;
 		if (elapsed >= 10) {
-			handleInput();
-			update(elapsed);
+			this->handleInput();
+			this->update(elapsed);
 			lastUpdate = SDL_GetTicks();
 		}
 		if (runningTime - frameStart >= frameDelay) {
 			frameStart = runningTime;
-			render();
+			this->render();
 		}
 	}
 }
