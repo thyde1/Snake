@@ -145,19 +145,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PointRenderer.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="SquareRenderer.cpp" />
     <ClCompile Include="Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Keys.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PointRenderer.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SquareRenderer.h" />
     <ClInclude Include="Updater.h" />
   </ItemGroup>
   <ItemGroup>

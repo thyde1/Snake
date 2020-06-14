@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "Player.h"
+#include "SquareRenderer.h"
+#include "PointRenderer.h"
 
 Game::Game()
 {
@@ -24,7 +26,10 @@ void Game::init()
 
 	this->gameObjects = *new std::list<GameObject*>();
 
-	this->instantiateObject()->addUpdater(new Player());
+	this->instantiateObject()
+		->addUpdater(new Player())
+		->addRenderer(new SquareRenderer())
+		->addRenderer(new PointRenderer());
 
 	const int fps = 60;
 	const int frameDelay = 1000 / fps;

@@ -2,15 +2,12 @@
 #include <list>
 #include "Keys.h"
 #include "SDL.h"
+#include "Component.h"
 
 class GameObject;
 
-class Updater {
+class Updater : public Component {
 public:
-	void setGameObject(GameObject* gameObject);
 	virtual void handleInput(std::list<SDL_Keysym> keys);
 	virtual void update(int elapsed) = 0;
-
-protected:
-	GameObject* gameObject;
 };

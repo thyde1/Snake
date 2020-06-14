@@ -1,9 +1,10 @@
 #include "GameObject.h"
 #include "Updater.h"
+#include "Renderer.h"
 
 GameObject::GameObject(SDL_Renderer* renderer)
 {
-	this->renderer = renderer;
+	this->sdlRenderer = renderer;
 	this->globalPosition = new Position();
 }
 
@@ -25,18 +26,23 @@ void GameObject::update(int elapsed)
 
 void GameObject::render()
 {
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-	SDL_Rect rect = *new SDL_Rect();
-	rect.x = this->globalPosition->x;
-	rect.y = this->globalPosition->y;
-	rect.w = 10;
-	rect.h = 10;
-	SDL_RenderDrawRect(renderer, &rect);
+	for (Renderer* renderer : this->renderers)
+	{
+		renderer->render();
+	}
 }
 
 GameObject* GameObject::addUpdater(Updater* updater)
 {
 	updater->setGameObject(this);
 	this->updaters.push_back(updater);
+	return this;
+}
+
+GameObject* GameObject::addRenderer(Renderer* renderer)
+{
+	renderer->setGameObject(this);
+	renderer->setSdlRenderer(this->sdlRenderer);
+	this->renderers.push_back(renderer);
 	return this;
 }

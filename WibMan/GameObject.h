@@ -4,6 +4,7 @@
 #include <list>
 
 class Updater;
+class Renderer;
 class InputHandler;
 
 class GameObject {
@@ -13,9 +14,11 @@ public:
 	void handleInput(std::list<SDL_Keysym> keys);
 	void render();
 	GameObject* addUpdater(Updater* updater);
+	GameObject* addRenderer(Renderer* renderer);
 	Position* globalPosition;
 private:
-	SDL_Renderer* renderer;
+	SDL_Renderer* sdlRenderer;
 	std::list<Updater*> updaters;
+	std::list<Renderer*> renderers;
 	std::list<InputHandler*> inputHandlers;
 };
