@@ -4,9 +4,11 @@
 #include "Component.h"
 
 class GameObject;
+class Collider;
 
 class Updater : public Component {
 public:
 	virtual void handleInput(std::list<SDL_Keysym> keys);
-	virtual void update(int elapsed) = 0;
+	virtual void handleCollision(Collider* collider);
+	virtual void update(int elapsed);
 };

@@ -1,11 +1,17 @@
 #include "GameObject.h"
 #include "Updater.h"
 #include "Renderer.h"
+#include "Collider.h"
+#include "GameCollider.h"
 
 GameObject::GameObject(SDL_Renderer* renderer)
 {
 	this->sdlRenderer = renderer;
 	this->globalPosition = new Position(0, 0);
+}
+
+GameObject::~GameObject()
+{
 }
 
 void GameObject::handleInput(std::list<SDL_Keysym> keys)
@@ -21,6 +27,39 @@ void GameObject::update(int elapsed)
 	for (Updater* updater : this->updaters)
 	{
 		updater->update(elapsed);
+	}
+	for (auto gameCollider : this->colliders) {
+		gameCollider->collider->x = this->globalPosition->getX();
+		gameCollider->collider->y = this->globalPosition->getY();
+	}
+}
+
+void GameObject::checkCollision(GameObject* object)
+{
+	for (auto gameCollider : this->colliders)
+	{
+		if (gameCollider->type == ColliderType::ACTIVE) {
+			object->checkCollision(gameCollider->collider);
+		}
+	}
+}
+
+void GameObject::handleCollision(Collider* collider)
+{
+	for (Updater* updater : this->updaters)
+	{
+		updater->handleCollision(collider);
+	}
+}
+
+void GameObject::checkCollision(Collider* collider)
+{
+	for (auto gameCollider : this->colliders)
+	{
+		auto thisCollider = gameCollider->collider;
+		if (thisCollider->checkCollision(collider)) {
+			this->handleCollision(collider);
+		}
 	}
 }
 
@@ -44,6 +83,14 @@ GameObject* GameObject::addRenderer(Renderer* renderer)
 	renderer->setGameObject(this);
 	renderer->setSdlRenderer(this->sdlRenderer);
 	this->renderers.push_back(renderer);
+	return this;
+}
+
+GameObject* GameObject::addCollider(ColliderType type, Collider* collider) {
+
+	collider->setGameObject(this);
+	GameCollider* gameCollider = new GameCollider(type, collider);
+	this->colliders.push_back(gameCollider);
 	return this;
 }
 

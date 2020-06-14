@@ -36,6 +36,7 @@ void Game::start()
 		if (elapsed >= 10) {
 			this->handleInput();
 			this->update(elapsed);
+			this->checkCollisions();
 			lastUpdate = SDL_GetTicks();
 		}
 		if (runningTime - frameStart >= frameDelay) {
@@ -73,6 +74,18 @@ void Game::update(int elapsed)
 	for(GameObject* gameObject : this->gameObjects)
 	{
 		gameObject->update(elapsed);
+	}
+}
+
+void Game::checkCollisions()
+{
+	for (GameObject* gameObject : this->gameObjects)
+	{
+		for (GameObject* other : this->gameObjects) {
+			if (other != gameObject) {
+				gameObject->checkCollision(other);
+			}
+		}
 	}
 }
 

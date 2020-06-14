@@ -15,6 +15,7 @@ public:
 	bool isRunning();
 	void handleInput();
 	void update(int elapsed);
+	void checkCollisions();
 	void render();
 	GameObject* instantiateObject();
 
