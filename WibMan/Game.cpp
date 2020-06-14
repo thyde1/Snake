@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "SquareRenderer.h"
 #include "PointRenderer.h"
+#include "SnakeData.h"
 
 Game::Game()
 {
@@ -29,7 +30,9 @@ void Game::init()
 	this->instantiateObject()
 		->addUpdater(new Player())
 		->addRenderer(new SquareRenderer())
-		->addRenderer(new PointRenderer());
+		->addRenderer(new PointRenderer())
+		->addComponent(new SnakeData())
+		->addComponent(new Component());
 
 	const int fps = 60;
 	const int frameDelay = 1000 / fps;

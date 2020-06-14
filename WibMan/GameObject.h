@@ -5,7 +5,7 @@
 
 class Updater;
 class Renderer;
-class InputHandler;
+class Component;
 
 class GameObject {
 public:
@@ -15,10 +15,22 @@ public:
 	void render();
 	GameObject* addUpdater(Updater* updater);
 	GameObject* addRenderer(Renderer* renderer);
+	GameObject* addComponent(Component* component);
+	template <class T>
+	T getComponent()
+	{
+		for (auto component : this->components)
+		{
+			T castComponent = dynamic_cast<T>(component);
+			if (castComponent != NULL) {
+				return castComponent;
+			}
+		}
+	}
 	Position* globalPosition;
 private:
 	SDL_Renderer* sdlRenderer;
 	std::list<Updater*> updaters;
 	std::list<Renderer*> renderers;
-	std::list<InputHandler*> inputHandlers;
+	std::list<Component*> components;
 };

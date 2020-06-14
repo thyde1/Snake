@@ -46,3 +46,10 @@ GameObject* GameObject::addRenderer(Renderer* renderer)
 	this->renderers.push_back(renderer);
 	return this;
 }
+
+GameObject* GameObject::addComponent(Component* component)
+{
+	component->setGameObject(this);
+	this->components.push_back(component);
+	return this;
+}
