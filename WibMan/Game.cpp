@@ -1,3 +1,4 @@
+#include <memory>
 #include "Game.h"
 
 Game::Game()
@@ -31,12 +32,15 @@ void Game::start()
 	auto frameStart = SDL_GetTicks();
 	auto lastUpdate = SDL_GetTicks();
 	while (this->isRunning()) {
+		this->instantiateGameObjectsPendingInstantiation();
 		auto runningTime = SDL_GetTicks();
 		auto elapsed = runningTime - lastUpdate;
 		if (elapsed >= 10) {
 			this->handleInput();
 			this->update(elapsed);
+			destroyObjectsPendingDestruction();
 			this->checkCollisions();
+			destroyObjectsPendingDestruction();
 			lastUpdate = SDL_GetTicks();
 		}
 		if (runningTime - frameStart >= frameDelay) {
@@ -101,12 +105,36 @@ void Game::render()
 
 GameObject* Game::instantiateObject()
 {
-	GameObject* object = new GameObject(this->renderer);
-	this->gameObjects.push_back(object);
+	auto object = new GameObject(this, this->renderer);
+	this->gameObjectsPendingInstantiation.push_back(object);
 	return object;
 }
 
-void Game::clearScreen() {
+void Game::destroyObject(GameObject* object)
+{
+	this->gameObjectsPendingDestruction.push_back(object);
+}
+
+void Game::clearScreen()
+{
 	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 	SDL_RenderClear(renderer);
+}
+
+void Game::instantiateGameObjectsPendingInstantiation()
+{
+	for (auto object : this->gameObjectsPendingInstantiation) {
+		this->gameObjects.push_back(object);
+	}
+
+	this->gameObjectsPendingInstantiation.clear();
+}
+
+void Game::destroyObjectsPendingDestruction()
+{
+	for (auto object : this->gameObjectsPendingDestruction) {
+		this->gameObjects.remove(object);
+		delete object;
+	}
+	this->gameObjectsPendingDestruction.clear();
 }

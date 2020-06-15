@@ -20,7 +20,7 @@ void SnakeRenderer::renderPosition(Position* position)
 	auto rect = new SDL_Rect();
 	rect->w = 10;
 	rect->h = 10;
-	rect->x = position->getX() - 5;
-	rect->y = position->getY() - 5;
+	rect->x = position->getX();
+	rect->y = position->getY();
 	SDL_RenderFillRect(this->sdlRenderer, rect);
 }

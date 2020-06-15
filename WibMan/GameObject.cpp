@@ -1,17 +1,31 @@
 #include "GameObject.h"
+#include "Game.h"
 #include "Updater.h"
 #include "Renderer.h"
 #include "Collider.h"
 #include "GameCollider.h"
+#include "Updater.h"
 
-GameObject::GameObject(SDL_Renderer* renderer)
+GameObject::GameObject(Game* game, SDL_Renderer* renderer)
 {
+	this->game = game;
 	this->sdlRenderer = renderer;
 	this->globalPosition = new Position(0, 0);
 }
 
 GameObject::~GameObject()
 {
+	for (auto updater : this->updaters)
+	{
+		delete updater;
+	}
+	for (auto gameCollider : this->colliders) {
+		delete gameCollider;
+	}
+	for (auto renderer : this->renderers)
+	{
+		delete renderer;
+	}
 }
 
 void GameObject::handleInput(std::list<SDL_Keysym> keys)

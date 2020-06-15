@@ -3,6 +3,7 @@
 #include "Position.h"
 #include <list>
 
+class Game;
 class Updater;
 class Renderer;
 class Collider;
@@ -12,8 +13,9 @@ class Component;
 
 class GameObject {
 public:
-	GameObject(SDL_Renderer* renderer);
+	GameObject(Game* game, SDL_Renderer* renderer);
 	virtual ~GameObject();
+	Game* game;
 	void update(int elapsed);
 	void checkCollision(GameObject* object);
 	virtual void handleCollision(Collider* collider);

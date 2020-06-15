@@ -18,9 +18,14 @@ public:
 	void checkCollisions();
 	void render();
 	GameObject* instantiateObject();
+	void destroyObject(GameObject* object);
 
 private:
 	SDL_Renderer* renderer;
 	std::list<GameObject*> gameObjects;
 	void clearScreen();
+	std::list<GameObject*> gameObjectsPendingInstantiation;
+	void instantiateGameObjectsPendingInstantiation();
+	std::list<GameObject*> gameObjectsPendingDestruction;
+	void destroyObjectsPendingDestruction();
 };
