@@ -22,6 +22,10 @@ void Snake::init()
 
 void Snake::update(int elapsed)
 {
+	if (this->snakeData->state == SnakeData::State::DEAD) {
+		return;
+	}
+
 	auto currentPosition = this->gameObject->globalPosition;
 	switch (this->direction) {
 	case Direction::UP:
@@ -41,8 +45,7 @@ void Snake::update(int elapsed)
 	}
 
 	if (this->checkSelfCollision() || this->checkOutOfBounds()) {
-		this->gameObject->game->destroyObject(this->gameObject);
-		return;
+		this->snakeData->state = SnakeData::State::DEAD;
 	}
 
 	this->snakeData->addPosition(this->gameObject->globalPosition);
@@ -124,11 +127,12 @@ bool Snake::checkSelfCollision() {
 bool Snake::checkOutOfBounds()
 {
 	auto girth = this->snakeData->girth;
+	auto windowSize = this->gameObject->game->windowSize;
 	if (this->gameObject->globalPosition->getX() < 0) {
 		return true;
 	}
 
-	if (this->gameObject->globalPosition->getX() + girth > 800) {
+	if (this->gameObject->globalPosition->getX() + girth > windowSize.w) {
 		return true;
 	}
 
@@ -136,7 +140,7 @@ bool Snake::checkOutOfBounds()
 		return true;
 	}
 
-	if (this->gameObject->globalPosition->getY() + girth > 600) {
+	if (this->gameObject->globalPosition->getY() + girth > windowSize.h) {
 		return true;
 	}
 

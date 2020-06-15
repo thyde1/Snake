@@ -9,7 +9,11 @@ SnakeRenderer::SnakeRenderer(SnakeData* snakeData) {
 
 void SnakeRenderer::render()
 {
-	SDL_SetRenderDrawColor(this->sdlRenderer, 255, 0, 0, 255);
+	struct Color { int r; int g; int b; int a; };
+	const Color aliveColor = { 0, 0, 255, 255 };
+	const Color deadColor = { 255, 0, 0, 255 };
+	auto snakeColor = this->snakeData->state == SnakeData::State::ALIVE ? aliveColor : deadColor;
+	SDL_SetRenderDrawColor(this->sdlRenderer, snakeColor.r, snakeColor.g, snakeColor.b, snakeColor.a);
 	for (auto position : this->snakeData->positions) {
 		renderPosition(position);
 	}

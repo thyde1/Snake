@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Food.h"
 #include "Collider.h"
 #include "Game.h"
@@ -8,7 +7,6 @@
 
 void Food::handleCollision(Collider* collider)
 {
-	std::cout << "Collision!";
 	this->gameObject->game->destroyObject(this->gameObject);
 
 	auto newX = rand() % 800;

@@ -9,6 +9,8 @@ class Game {
 public:
 	Game();
 	~Game();
+	struct WindowSize { int w; int h; };
+	WindowSize windowSize = { 800, 600 };
 	void sdlInit();
 	virtual void init() = 0;
 	void start();

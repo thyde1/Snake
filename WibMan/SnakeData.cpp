@@ -4,6 +4,7 @@
 
 SnakeData::SnakeData() {
 	this->positions = std::list<Position*>();
+	this->state = SnakeData::State::ALIVE;
 }
 
 void SnakeData::addPosition(Position* position)
