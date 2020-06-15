@@ -58,14 +58,6 @@ void GameObject::checkCollision(GameObject* object)
 	}
 }
 
-void GameObject::handleCollision(Collider* collider)
-{
-	for (Updater* updater : this->updaters)
-	{
-		updater->handleCollision(collider);
-	}
-}
-
 void GameObject::checkCollision(Collider* collider)
 {
 	for (auto gameCollider : this->colliders)
@@ -73,7 +65,16 @@ void GameObject::checkCollision(Collider* collider)
 		auto thisCollider = gameCollider->collider;
 		if (thisCollider->checkCollision(collider)) {
 			this->handleCollision(collider);
+			collider->getGameObject()->handleCollision(thisCollider);
 		}
+	}
+}
+
+void GameObject::handleCollision(Collider* collider)
+{
+	for (Updater* updater : this->updaters)
+	{
+		updater->handleCollision(collider);
 	}
 }
 

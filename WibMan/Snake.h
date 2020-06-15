@@ -12,7 +12,10 @@ public:
 	void init();
 	void update(int elapsed);
 	void handleInput(std::list<SDL_Keysym> keys);
+	void handleCollision(Collider* collider);
 	SnakeData* snakeData;
 private:
 	Direction direction;
+	bool checkSelfCollision();
+	bool checkCollision(Position* position);
 };

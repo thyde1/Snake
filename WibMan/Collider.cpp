@@ -18,21 +18,28 @@ void Collider::setGameObject(GameObject* gameObject)
 
 bool Collider::checkCollision(Collider* collider)
 {
-    if (this->x > collider->x + collider->w) {
+    return Collider::checkCollision(this->w, this->h, this->x, this->y, collider->w, collider->h, collider->x, collider->y);
+}
+
+bool Collider::checkCollision(int wA, int hA, int xA, int yA, int wB, int hB, int xB, int yB)
+{
+    if (xA > xB + wB) {
         return false;
     }
 
-    if (this->x + this->w < collider->x) {
+    if (xA + wA < xB) {
         return false;
     }
 
-    if (this->y > collider->y + collider->h) {
+    if (yA > yB + hB) {
         return false;
     }
 
-    if (this->y + this->h < collider->y) {
+    if (yA + hA < yB) {
         return false;
     }
 
     return true;
 }
+
+

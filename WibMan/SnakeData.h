@@ -8,7 +8,8 @@ class Position;
 class SnakeData : public Component {
 public:
 	SnakeData();
-	int length = 300;
+	int girth = 10;
+	int length = 20;
 	void addPosition(Position* position);
-	std::list<Position*>* positions;
+	std::list<Position*> positions;
 };

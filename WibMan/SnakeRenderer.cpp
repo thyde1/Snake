@@ -10,7 +10,7 @@ SnakeRenderer::SnakeRenderer(SnakeData* snakeData) {
 void SnakeRenderer::render()
 {
 	SDL_SetRenderDrawColor(this->sdlRenderer, 255, 0, 0, 255);
-	for (auto position : *this->snakeData->positions) {
+	for (auto position : this->snakeData->positions) {
 		renderPosition(position);
 	}
 }
