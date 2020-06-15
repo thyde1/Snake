@@ -23,4 +23,5 @@ void SnakeRenderer::renderPosition(Position* position)
 	rect->x = position->getX();
 	rect->y = position->getY();
 	SDL_RenderFillRect(this->sdlRenderer, rect);
+	delete rect;
 }

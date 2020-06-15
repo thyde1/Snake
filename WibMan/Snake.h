@@ -17,5 +17,6 @@ public:
 private:
 	Direction direction;
 	bool checkSelfCollision();
+	bool checkOutOfBounds();
 	bool checkCollision(Position* position);
 };

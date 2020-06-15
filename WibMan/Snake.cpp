@@ -40,7 +40,7 @@ void Snake::update(int elapsed)
 		this->gameObject->globalPosition = new Position(currentPosition->getX(), currentPosition->getY());
 	}
 
-	if (this->checkSelfCollision()) {
+	if (this->checkSelfCollision() || this->checkOutOfBounds()) {
 		this->gameObject->game->destroyObject(this->gameObject);
 		return;
 	}
@@ -118,6 +118,28 @@ bool Snake::checkSelfCollision() {
 		}
 		break;
 	}
+	return false;
+}
+
+bool Snake::checkOutOfBounds()
+{
+	auto girth = this->snakeData->girth;
+	if (this->gameObject->globalPosition->getX() < 0) {
+		return true;
+	}
+
+	if (this->gameObject->globalPosition->getX() + girth > 800) {
+		return true;
+	}
+
+	if (this->gameObject->globalPosition->getY() < 0) {
+		return true;
+	}
+
+	if (this->gameObject->globalPosition->getY() + girth > 600) {
+		return true;
+	}
+
 	return false;
 }
 
