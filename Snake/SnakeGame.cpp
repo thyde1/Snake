@@ -2,7 +2,7 @@
 #include "SnakeGame.h"
 #include "SnakeRenderer.h"
 #include "PointRenderer.h"
-#include "SquareRenderer.h"
+#include "FoodRenderer.h"
 #include "SnakeData.h"
 #include "Snake.h"
 #include "Food.h"
@@ -22,7 +22,7 @@ void SnakeGame::init() {
 
 	this->instantiateObject()
 		->setGlobalPosition(100, 100)
-		->addRenderer(new SquareRenderer())
+		->addRenderer(new FoodRenderer())
 		->addCollider(ColliderType::PASSIVE, new Collider(10, 10))
 		->addUpdater(new Food());
 }

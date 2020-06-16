@@ -22,8 +22,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{6dc6ddac-d01c-4282-9d2f-ff03f96deeb9}</ProjectGuid>
-    <RootNamespace>WibMan</RootNamespace>
+    <RootNamespace>Snake</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Snake</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,6 +149,7 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Food.cpp" />
+    <ClCompile Include="FoodRenderer.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCollider.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -167,6 +169,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Food.h" />
+    <ClInclude Include="FoodRenderer.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameCollider.h" />

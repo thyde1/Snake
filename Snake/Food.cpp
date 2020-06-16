@@ -2,7 +2,7 @@
 #include "Collider.h"
 #include "Game.h"
 #include "GameObject.h"
-#include "SquareRenderer.h"
+#include "FoodRenderer.h"
 #include "GameCollider.h"
 
 void Food::handleCollision(Collider* collider)
@@ -15,7 +15,7 @@ void Food::handleCollision(Collider* collider)
 	this->gameObject->game
 		->instantiateObject()
 		->setGlobalPosition(newX, newY)
-		->addRenderer(new SquareRenderer())
+		->addRenderer(new FoodRenderer())
 		->addCollider(ColliderType::PASSIVE, new Collider(10, 10))
 		->addUpdater(new Food());
 }
