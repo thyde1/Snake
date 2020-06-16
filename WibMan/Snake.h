@@ -2,7 +2,6 @@
 #include "GameObject.h"
 #include "Updater.h"
 #include "Renderer.h"
-#include "Direction.h"
 
 class SnakeData;
 
@@ -15,7 +14,6 @@ public:
 	void handleCollision(Collider* collider);
 	SnakeData* snakeData;
 private:
-	Direction direction;
 	bool checkSelfCollision();
 	bool checkOutOfBounds();
 	bool checkCollision(Position* position);

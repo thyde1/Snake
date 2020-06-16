@@ -11,5 +11,6 @@ public:
 	void render();
 private:
 	void renderPosition(Position* position);
+	void renderHead();
 	SnakeData* snakeData;
 };

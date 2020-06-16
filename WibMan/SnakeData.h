@@ -4,9 +4,11 @@
 #include "Component.h"
 
 class Position;
+enum class Direction;
 
 class SnakeData : public Component {
 public:
+	Direction direction;
 	enum class State { DEAD, ALIVE };
 	State state;
 	SnakeData();

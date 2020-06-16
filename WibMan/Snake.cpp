@@ -6,13 +6,14 @@
 #include "Snake.h"
 #include "SnakeData.h"
 #include "Collider.h"
+#include "Direction.h"
 
 const int speed = 2;
 
 Snake::Snake(SnakeData* snakeData)
 {
 	this->snakeData = snakeData;
-	this->direction = Direction::NONE;
+	this->snakeData->direction = Direction::NONE;
 }
 
 void Snake::init()
@@ -27,7 +28,7 @@ void Snake::update(int elapsed)
 	}
 
 	auto currentPosition = this->gameObject->globalPosition;
-	switch (this->direction) {
+	switch (this->snakeData->direction) {
 	case Direction::UP:
 		this->gameObject->globalPosition = new Position(currentPosition->getX(), currentPosition->getY() - (int)(elapsed * speed * 0.1));
 		break;
@@ -57,23 +58,23 @@ void Snake::handleInput(std::list<SDL_Keysym> keys)
 	{
 		switch (key.sym) {
 		case SDLK_UP:
-			if (this->direction != Direction::DOWN) {
-				this->direction = Direction::UP;
+			if (this->snakeData->direction != Direction::DOWN) {
+				this->snakeData->direction = Direction::UP;
 			}
 			break;
 		case SDLK_DOWN:
-			if (this->direction != Direction::UP) {
-				this->direction = Direction::DOWN;
+			if (this->snakeData->direction != Direction::UP) {
+				this->snakeData->direction = Direction::DOWN;
 			}
 			break;
 		case SDLK_LEFT:
-			if (this->direction != Direction::RIGHT) {
-				this->direction = Direction::LEFT;
+			if (this->snakeData->direction != Direction::RIGHT) {
+				this->snakeData->direction = Direction::LEFT;
 			}
 			break;
 		case SDLK_RIGHT:
-			if (this->direction != Direction::LEFT) {
-				this->direction = Direction::RIGHT;
+			if (this->snakeData->direction != Direction::LEFT) {
+				this->snakeData->direction = Direction::RIGHT;
 			}
 			break;
 		}
@@ -87,7 +88,7 @@ void Snake::handleCollision(Collider* collider)
 
 bool Snake::checkSelfCollision() {
 	auto currentPosition = this->gameObject->globalPosition;
-	switch (this->direction) {
+	switch (this->snakeData->direction) {
 	case Direction::UP:
 		for (Position* position : this->snakeData->positions) {
 			if (position->getY() < currentPosition->getY() && checkCollision(position))
