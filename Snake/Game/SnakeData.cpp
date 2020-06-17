@@ -1,6 +1,6 @@
 #include <list>
+#include "../Engine/Position.h"
 #include "SnakeData.h"
-#include "Position.h"
 
 SnakeData::SnakeData() {
 	this->positions = std::list<Position*>();

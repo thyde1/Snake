@@ -1,7 +1,7 @@
 #pragma once
 
 #include <list>
-#include "Component.h"
+#include "../Engine/Component.h"
 
 class Position;
 enum class Direction;

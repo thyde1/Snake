@@ -1,9 +1,9 @@
+#include "../Engine/Collider.h"
+#include "../Engine/Game.h"
+#include "../Engine/GameObject.h"
+#include "../Engine/GameCollider.h"
 #include "Food.h"
-#include "Collider.h"
-#include "Game.h"
-#include "GameObject.h"
 #include "FoodRenderer.h"
-#include "GameCollider.h"
 
 void Food::handleCollision(Collider* collider)
 {

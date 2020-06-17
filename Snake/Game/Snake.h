@@ -1,7 +1,7 @@
 #pragma once
-#include "GameObject.h"
-#include "Updater.h"
-#include "Renderer.h"
+#include "../Engine/GameObject.h"
+#include "../Engine/Updater.h"
+#include "../Engine/Renderer.h"
 
 class SnakeData;
 

@@ -1,13 +1,12 @@
-#include "Game.h"
+#include "../Engine/Game.h"
+#include "../Engine/GameCollider.h"
+#include "../Engine/Collider.h"
 #include "SnakeGame.h"
 #include "SnakeRenderer.h"
-#include "PointRenderer.h"
 #include "FoodRenderer.h"
 #include "SnakeData.h"
 #include "Snake.h"
 #include "Food.h"
-#include "GameCollider.h"
-#include "Collider.h"
 
 void SnakeGame::init() {
 	SnakeData* snakeData = new SnakeData();

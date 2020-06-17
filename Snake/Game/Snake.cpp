@@ -1,11 +1,11 @@
 #include <list>
 #include <iostream>
 #include <string>
-#include "Game.h"
-#include "Position.h"
+#include "../Engine/Game.h"
+#include "../Engine/Position.h"
+#include "../Engine/Collider.h"
 #include "Snake.h"
 #include "SnakeData.h"
-#include "Collider.h"
 #include "Direction.h"
 
 const int speed = 2;

@@ -146,42 +146,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Collider.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Food.cpp" />
-    <ClCompile Include="FoodRenderer.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameCollider.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Engine\Collider.cpp" />
+    <ClCompile Include="Engine\Component.cpp" />
+    <ClCompile Include="Game\Food.cpp" />
+    <ClCompile Include="Game\FoodRenderer.cpp" />
+    <ClCompile Include="Engine\Game.cpp" />
+    <ClCompile Include="Engine\GameCollider.cpp" />
+    <ClCompile Include="Engine\GameObject.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Position.cpp" />
-    <ClCompile Include="Snake.cpp" />
-    <ClCompile Include="PointRenderer.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="SnakeData.cpp" />
-    <ClCompile Include="SnakeGame.cpp" />
-    <ClCompile Include="SnakeRenderer.cpp" />
-    <ClCompile Include="SquareRenderer.cpp" />
-    <ClCompile Include="Updater.cpp" />
+    <ClCompile Include="Engine\Position.cpp" />
+    <ClCompile Include="Game\Snake.cpp" />
+    <ClCompile Include="Engine\PointRenderer.cpp" />
+    <ClCompile Include="Engine\Renderer.cpp" />
+    <ClCompile Include="Game\SnakeData.cpp" />
+    <ClCompile Include="Game\SnakeGame.cpp" />
+    <ClCompile Include="Game\SnakeRenderer.cpp" />
+    <ClCompile Include="Engine\SquareRenderer.cpp" />
+    <ClCompile Include="Engine\Updater.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collider.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="Direction.h" />
-    <ClInclude Include="Food.h" />
-    <ClInclude Include="FoodRenderer.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameCollider.h" />
-    <ClInclude Include="Snake.h" />
-    <ClInclude Include="PointRenderer.h" />
-    <ClInclude Include="Position.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="SnakeGame.h" />
-    <ClInclude Include="SnakeData.h" />
-    <ClInclude Include="SnakeRenderer.h" />
-    <ClInclude Include="SquareRenderer.h" />
-    <ClInclude Include="Updater.h" />
+    <ClInclude Include="Engine\Collider.h" />
+    <ClInclude Include="Engine\Component.h" />
+    <ClInclude Include="Game\Direction.h" />
+    <ClInclude Include="Game\Food.h" />
+    <ClInclude Include="Game\FoodRenderer.h" />
+    <ClInclude Include="Engine\Game.h" />
+    <ClInclude Include="Engine\GameObject.h" />
+    <ClInclude Include="Engine\GameCollider.h" />
+    <ClInclude Include="Game\Snake.h" />
+    <ClInclude Include="Engine\PointRenderer.h" />
+    <ClInclude Include="Engine\Position.h" />
+    <ClInclude Include="Engine\Renderer.h" />
+    <ClInclude Include="Game\SnakeGame.h" />
+    <ClInclude Include="Game\SnakeData.h" />
+    <ClInclude Include="Game\SnakeRenderer.h" />
+    <ClInclude Include="Engine\SquareRenderer.h" />
+    <ClInclude Include="Engine\Updater.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,8 +1,8 @@
 #include "SDL_image.h"
+#include "../Engine/Position.h"
 #include "SnakeRenderer.h"
 #include "SnakeData.h"
 #include "Snake.h"
-#include "Position.h"
 #include "Direction.h"
 
 SDL_Texture* faceTexture;

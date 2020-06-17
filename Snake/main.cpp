@@ -1,5 +1,5 @@
 #include "SDL.h"
-#include "SnakeGame.h"
+#include "Game/SnakeGame.h"
 
 int main(int argc, char* argv[]) {
 	Game* game = new SnakeGame();
