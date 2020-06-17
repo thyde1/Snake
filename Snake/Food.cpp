@@ -11,7 +11,6 @@ void Food::handleCollision(Collider* collider)
 
 	auto newX = rand() % 800;
 	auto newY = rand() % 600;
-
 	this->gameObject->game
 		->instantiateObject()
 		->setGlobalPosition(newX, newY)

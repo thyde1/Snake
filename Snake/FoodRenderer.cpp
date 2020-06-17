@@ -11,11 +11,10 @@ void FoodRenderer::render()
 		SDL_FreeSurface(tempFoodSurface);
 	}
 
-	auto foodRect = new SDL_Rect();
-	foodRect->x = this->gameObject->globalPosition->getX();
-	foodRect->y = this->gameObject->globalPosition->getY();
-	foodRect->w = 10;
-	foodRect->h = 10;
-	SDL_RenderCopy(this->sdlRenderer, foodTexture, NULL, foodRect);
-	delete foodRect;
+	auto foodRect = SDL_Rect();
+	foodRect.x = this->gameObject->globalPosition->getX();
+	foodRect.y = this->gameObject->globalPosition->getY();
+	foodRect.w = 10;
+	foodRect.h = 10;
+	SDL_RenderCopy(this->sdlRenderer, foodTexture, NULL, &foodRect);
 }
