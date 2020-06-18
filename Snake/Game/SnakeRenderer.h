@@ -1,6 +1,8 @@
 #pragma once
 
+#include<memory>
 #include "../Engine/Renderer.h"
+#include "../Engine/SpriteRenderer.h"
 
 class SnakeData;
 class Position;
@@ -12,5 +14,7 @@ public:
 private:
 	void renderPosition(Position* position);
 	void renderHead();
-	SnakeData* snakeData;
+
+	std::unique_ptr<SpriteRenderer> spriteRenderer;
+	SnakeData *snakeData;
 };

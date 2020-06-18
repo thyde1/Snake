@@ -1,3 +1,4 @@
+#include<memory>
 #include "SDL_image.h"
 #include "../Engine/Position.h"
 #include "SnakeRenderer.h"
@@ -7,18 +8,11 @@
 
 SDL_Texture* faceTexture;
 
-SnakeRenderer::SnakeRenderer(SnakeData* snakeData) {
-	this->snakeData = snakeData;
-}
+SnakeRenderer::SnakeRenderer(SnakeData *snakeData) : snakeData{ snakeData }, spriteRenderer { std::unique_ptr<SpriteRenderer>() }
+{}
 
 void SnakeRenderer::render()
 {
-	if (faceTexture == NULL) {
-		SDL_Surface* tempFaceSurface = IMG_Load("assets/snakeFace.png");
-		faceTexture = SDL_CreateTextureFromSurface(this->sdlRenderer, tempFaceSurface);
-		SDL_FreeSurface(tempFaceSurface);
-	}
-
 	struct Color { int r; int g; int b; int a; };
 	const Color aliveColor = { 0, 0, 255, 255 };
 	const Color deadColor = { 255, 0, 0, 255 };
@@ -41,21 +35,18 @@ void SnakeRenderer::renderPosition(Position* position)
 }
 
 void SnakeRenderer::renderHead() {
+	if (this->spriteRenderer == NULL) {
+		this->spriteRenderer = std::make_unique<SpriteRenderer>("assets/snakeFace.png");
+		this->spriteRenderer->setSdlRenderer(this->sdlRenderer);
+		this->spriteRenderer->setGameObject(this->gameObject);
+	}
 	auto headPosition = this->snakeData->positions.back();
 	auto girth = this->snakeData->girth;
 	SDL_SetRenderDrawColor(this->sdlRenderer, 255, 127, 127, 255);
-	auto faceRect = SDL_Rect();
-	faceRect.x = headPosition->getX();
-	faceRect.y = headPosition->getY();
-	faceRect.w = girth;
-	faceRect.h = girth;
-	auto faceCenter = SDL_Point();
-	faceCenter.x = 5;
-	faceCenter.y = 5;
 	switch (this->snakeData->direction)
 	{
 	case Direction::UP:
-		SDL_RenderCopy(this->sdlRenderer, faceTexture, NULL, &faceRect);
+		this->spriteRenderer->render(0);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
 			(int)(headPosition->getX() + girth * 0.5), headPosition->getY(),
@@ -63,7 +54,7 @@ void SnakeRenderer::renderHead() {
 		);
 		break;
 	case Direction::DOWN:
-		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, 0, &faceCenter, SDL_RendererFlip::SDL_FLIP_VERTICAL);
+		this->spriteRenderer->render(180);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
 			(int)(headPosition->getX() + girth * 0.5), headPosition->getY() + girth,
@@ -71,7 +62,7 @@ void SnakeRenderer::renderHead() {
 		);
 		break;
 	case Direction::LEFT:
-		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, -90, &faceCenter, SDL_RendererFlip::SDL_FLIP_NONE);
+		this->spriteRenderer->render(-90);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
 			headPosition->getX(), (int)(headPosition->getY() + girth * 0.5),
@@ -79,7 +70,7 @@ void SnakeRenderer::renderHead() {
 		);
 		break;
 	case Direction::RIGHT:
-		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, 90, &faceCenter, SDL_RendererFlip::SDL_FLIP_NONE);
+		this->spriteRenderer->render(90);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
 			headPosition->getX() + girth, (int)(headPosition->getY() + girth * 0.5),
@@ -87,7 +78,7 @@ void SnakeRenderer::renderHead() {
 		);
 		break;
 	default:
-		SDL_RenderCopy(this->sdlRenderer, faceTexture, NULL, &faceRect);
+		this->spriteRenderer->render(0);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
 			(int)(headPosition->getX() + girth * 0.5), headPosition->getY(),

@@ -1,9 +1,15 @@
 #pragma once
 #include "Renderer.h"
-#include <string>
 class SpriteRenderer : public Renderer
 {
 public:
-    SpriteRenderer(std::string imagePath);
+    SpriteRenderer(const char *imagePath);
     void render();
+    void render(const double rotation);
+private:
+    const char *imagePath;
+    SDL_Texture *texture;
+    int w, h;
+    SDL_Rect textureRect;
+    SDL_Point center;
 };

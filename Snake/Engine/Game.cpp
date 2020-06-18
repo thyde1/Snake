@@ -1,9 +1,11 @@
 #include <memory>
 #include "Game.h"
+#include "TextureManager.h"
 
 Game::Game()
 {
 	this->sdlInit();
+	this->textureManager = TextureManager(this->renderer);
 }
 
 Game::~Game()

@@ -1,7 +1,10 @@
 #pragma once
-#include "../Engine/Updater.h"
-class Food : public Updater
+
+#include "Food.h"
+#include "../Engine/GameObject.h"
+
+namespace Food
 {
-	void handleCollision(Collider* collider);
+    GameObject* create(GameObject* gameObject);
 };
 

@@ -149,7 +149,7 @@
     <ClCompile Include="Engine\Collider.cpp" />
     <ClCompile Include="Engine\Component.cpp" />
     <ClCompile Include="Game\Food.cpp" />
-    <ClCompile Include="Game\FoodRenderer.cpp" />
+    <ClCompile Include="Game\FoodCollisionHandler.cpp" />
     <ClCompile Include="Engine\Game.cpp" />
     <ClCompile Include="Engine\GameCollider.cpp" />
     <ClCompile Include="Engine\GameObject.cpp" />
@@ -164,13 +164,14 @@
     <ClCompile Include="Engine\SquareRenderer.cpp" />
     <ClCompile Include="Engine\Updater.cpp" />
     <ClCompile Include="Engine\SpriteRenderer.cpp" />
+    <ClCompile Include="Engine\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Collider.h" />
     <ClInclude Include="Engine\Component.h" />
-    <ClInclude Include="Game\Direction.h" />
     <ClInclude Include="Game\Food.h" />
-    <ClInclude Include="Game\FoodRenderer.h" />
+    <ClInclude Include="Game\Direction.h" />
+    <ClInclude Include="Game\FoodCollisionHandler.h" />
     <ClInclude Include="Engine\Game.h" />
     <ClInclude Include="Engine\GameObject.h" />
     <ClInclude Include="Engine\GameCollider.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Engine\SquareRenderer.h" />
     <ClInclude Include="Engine\Updater.h" />
     <ClInclude Include="Engine\SpriteRenderer.h" />
+    <ClInclude Include="Engine\TextureManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

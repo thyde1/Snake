@@ -4,11 +4,13 @@
 #include <stdio.h>
 #include <list>
 #include "GameObject.h"
+#include "TextureManager.h"
 
 class Game {
 public:
 	Game();
 	~Game();
+	TextureManager textureManager;
 	struct WindowSize { int w; int h; };
 	WindowSize windowSize = { 800, 600 };
 	void sdlInit();

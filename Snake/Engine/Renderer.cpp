@@ -4,7 +4,7 @@ void Renderer::render()
 {
 }
 
-void Renderer::setSdlRenderer(SDL_Renderer* sdlRenderer)
+void Renderer::setSdlRenderer(SDL_Renderer *sdlRenderer)
 {
 	this->sdlRenderer = sdlRenderer;
 }
