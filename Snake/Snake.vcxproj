@@ -163,6 +163,7 @@
     <ClCompile Include="Game\SnakeRenderer.cpp" />
     <ClCompile Include="Engine\SquareRenderer.cpp" />
     <ClCompile Include="Engine\Updater.cpp" />
+    <ClCompile Include="Engine\SpriteRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Collider.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Game\SnakeRenderer.h" />
     <ClInclude Include="Engine\SquareRenderer.h" />
     <ClInclude Include="Engine\Updater.h" />
+    <ClInclude Include="Engine\SpriteRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

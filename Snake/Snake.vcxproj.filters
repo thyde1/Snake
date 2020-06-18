@@ -68,6 +68,9 @@
     <ClCompile Include="Game\SnakeRenderer.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\SpriteRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Collider.h">
@@ -121,6 +124,7 @@
     <ClInclude Include="Game\SnakeRenderer.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\SpriteRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
