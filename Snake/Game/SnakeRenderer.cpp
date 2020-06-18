@@ -58,40 +58,40 @@ void SnakeRenderer::renderHead() {
 		SDL_RenderCopy(this->sdlRenderer, faceTexture, NULL, &faceRect);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
-			headPosition->getX() + girth * 0.5, headPosition->getY(),
-			headPosition->getX() + girth * 0.5, headPosition->getY() - 5
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY(),
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY() - 5
 		);
 		break;
 	case Direction::DOWN:
 		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, 0, &faceCenter, SDL_RendererFlip::SDL_FLIP_VERTICAL);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
-			headPosition->getX() + girth * 0.5, headPosition->getY() + girth,
-			headPosition->getX() + girth * 0.5, headPosition->getY() + girth + 5
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY() + girth,
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY() + girth + 5
 		);
 		break;
 	case Direction::LEFT:
 		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, -90, &faceCenter, SDL_RendererFlip::SDL_FLIP_NONE);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
-			headPosition->getX(), headPosition->getY() + girth * 0.5,
-			headPosition->getX() - 5, headPosition->getY() + girth * 0.5
+			headPosition->getX(), (int)(headPosition->getY() + girth * 0.5),
+			headPosition->getX() - 5, (int)(headPosition->getY() + girth * 0.5)
 		);
 		break;
 	case Direction::RIGHT:
 		SDL_RenderCopyEx(this->sdlRenderer, faceTexture, NULL, &faceRect, 90, &faceCenter, SDL_RendererFlip::SDL_FLIP_NONE);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
-			headPosition->getX() + girth, headPosition->getY() + girth * 0.5,
-			headPosition->getX() + girth + 5, headPosition->getY() + girth * 0.5
+			headPosition->getX() + girth, (int)(headPosition->getY() + girth * 0.5),
+			headPosition->getX() + girth + 5, (int)(headPosition->getY() + girth * 0.5)
 		);
 		break;
 	default:
 		SDL_RenderCopy(this->sdlRenderer, faceTexture, NULL, &faceRect);
 		SDL_RenderDrawLine(
 			this->sdlRenderer,
-			headPosition->getX() + girth * 0.5, headPosition->getY(),
-			headPosition->getX() + girth * 0.5, headPosition->getY() - 5
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY(),
+			(int)(headPosition->getX() + girth * 0.5), headPosition->getY() - 5
 		);
 		break;
 	}
