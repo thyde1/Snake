@@ -88,14 +88,14 @@ void GameObject::render()
 
 GameObject* GameObject::addUpdater(Updater* updater)
 {
-	updater->setGameObject(this);
+	this->addComponent(updater);
 	this->updaters.push_back(updater);
 	return this;
 }
 
 GameObject* GameObject::addRenderer(Renderer* renderer)
 {
-	renderer->setGameObject(this);
+	this->addComponent(renderer);
 	renderer->setSdlRenderer(this->sdlRenderer);
 	this->renderers.push_back(renderer);
 	return this;
@@ -103,7 +103,7 @@ GameObject* GameObject::addRenderer(Renderer* renderer)
 
 GameObject* GameObject::addCollider(ColliderType type, Collider* collider) {
 
-	collider->setGameObject(this);
+	this->addComponent(collider);
 	GameCollider* gameCollider = new GameCollider(type, collider);
 	this->colliders.push_back(gameCollider);
 	return this;
