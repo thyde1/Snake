@@ -5,7 +5,7 @@
 
 class Renderer : public Component {
 public:
-	virtual void render();
+	virtual void render() = 0;
 	void setSdlRenderer(SDL_Renderer* sdlRenderer);
 protected:
 	SDL_Renderer* sdlRenderer = nullptr;

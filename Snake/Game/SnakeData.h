@@ -2,13 +2,13 @@
 
 #include <list>
 #include "../Engine/Component.h"
+#include "Direction.h"
 
 class Position;
-enum class Direction;
 
 class SnakeData : public Component {
 public:
-	Direction direction;
+	Direction direction = Direction::NONE;
 	enum class State { DEAD, ALIVE };
 	State state;
 	SnakeData();

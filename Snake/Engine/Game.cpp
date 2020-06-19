@@ -15,6 +15,7 @@ Game::~Game()
 void Game::sdlInit()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
+	TTF_Init();
 	SDL_Window* window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, this->windowSize.w, this->windowSize.h, SDL_WINDOW_SHOWN);
 	this->renderer = SDL_CreateRenderer(window, -1, 0);
 
@@ -102,6 +103,7 @@ void Game::render()
 	{
 		gameObject->render();
 	}
+
 	SDL_RenderPresent(renderer);
 }
 

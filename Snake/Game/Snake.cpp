@@ -10,10 +10,8 @@
 
 const int speed = 2;
 
-Snake::Snake(SnakeData* snakeData)
+Snake::Snake(SnakeData *snakeData, const Size worldSize, int *score) : snakeData { snakeData }, worldSize { worldSize }, score { score }
 {
-	this->snakeData = snakeData;
-	this->snakeData->direction = Direction::NONE;
 }
 
 void Snake::init()
@@ -84,6 +82,7 @@ void Snake::handleInput(std::list<SDL_Keysym> keys)
 void Snake::handleCollision(Collider* collider)
 {
 	this->snakeData->length += 10;
+	(*this->score)++;
 }
 
 bool Snake::checkSelfCollision() {
@@ -128,12 +127,12 @@ bool Snake::checkSelfCollision() {
 bool Snake::checkOutOfBounds()
 {
 	auto girth = this->snakeData->girth;
-	auto windowSize = this->gameObject->game->windowSize;
+	auto worldSize = this->worldSize;
 	if (this->gameObject->globalPosition->getX() < 0) {
 		return true;
 	}
 
-	if (this->gameObject->globalPosition->getX() + girth > windowSize.w) {
+	if (this->gameObject->globalPosition->getX() + girth > worldSize.w) {
 		return true;
 	}
 
@@ -141,7 +140,7 @@ bool Snake::checkOutOfBounds()
 		return true;
 	}
 
-	if (this->gameObject->globalPosition->getY() + girth > windowSize.h) {
+	if (this->gameObject->globalPosition->getY() + girth > worldSize.h) {
 		return true;
 	}
 

@@ -2,9 +2,8 @@
 #include "../Engine/Position.h"
 #include "SnakeData.h"
 
-SnakeData::SnakeData() {
-	this->positions = std::list<Position*>();
-	this->state = SnakeData::State::ALIVE;
+SnakeData::SnakeData() : direction{ Direction::NONE }, state{ SnakeData::State::ALIVE }
+{
 }
 
 void SnakeData::addPosition(Position* position)

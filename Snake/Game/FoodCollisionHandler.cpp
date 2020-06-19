@@ -4,17 +4,18 @@
 #include "../Engine/GameCollider.h"
 #include "../Engine/SpriteRenderer.h"
 #include "FoodCollisionHandler.h"
-#include "Food.h"
+#include "FoodFactory.h"
+
+FoodCollisionHandler::FoodCollisionHandler(FoodFactory& foodFactory) : foodFactory(foodFactory)
+{
+}
 
 void FoodCollisionHandler::handleCollision(Collider* collider)
 {
 	this->gameObject->game->destroyObject(this->gameObject);
 
-	auto newX = rand() % 800;
-	auto newY = rand() % 600;
-	Food::create(
+	foodFactory.create(
 		this->gameObject->game
 			->instantiateObject()
-			->setGlobalPosition(newX, newY)
 	);
 }

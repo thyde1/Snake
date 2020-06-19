@@ -71,7 +71,10 @@
     <ClCompile Include="Game\FoodCollisionHandler.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Food.cpp">
+    <ClCompile Include="Game\UiRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\FoodFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -126,9 +129,25 @@
     <ClInclude Include="Game\FoodCollisionHandler.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Food.h" />
+    <ClInclude Include="Game\UiRenderer.h" />
+    <ClInclude Include="Engine\Size.h" />
+    <ClInclude Include="Game\FoodFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="C:\WINDOWS\Fonts\VERDANA.TTF" />
+    <Font Include="C:\WINDOWS\Fonts\VERDANAB.TTF" />
+    <Font Include="C:\WINDOWS\Fonts\VERDANAZ.TTF" />
+    <Font Include="C:\WINDOWS\Fonts\VERDANAI.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\snakeFace.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\food.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
