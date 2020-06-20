@@ -23,10 +23,10 @@ public:
     void render();
     GameObject* instantiateObject();
     void destroyObject(GameObject* object);
+    std::list<GameObject*> gameObjects;
 
 private:
     SDL_Renderer* renderer;
-    std::list<GameObject*> gameObjects;
     void clearScreen();
     std::list<GameObject*> gameObjectsPendingInstantiation;
     void instantiateGameObjectsPendingInstantiation();

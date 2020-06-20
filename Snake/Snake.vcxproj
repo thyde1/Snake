@@ -154,6 +154,7 @@
     <ClCompile Include="Engine\Game.cpp" />
     <ClCompile Include="Engine\GameCollider.cpp" />
     <ClCompile Include="Engine\GameObject.cpp" />
+    <ClCompile Include="Game\GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Position.cpp" />
     <ClCompile Include="Game\Snake.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Engine\Game.h" />
     <ClInclude Include="Engine\GameObject.h" />
     <ClInclude Include="Engine\GameCollider.h" />
+    <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Game\Snake.h" />
     <ClInclude Include="Engine\PointRenderer.h" />
     <ClInclude Include="Engine\Position.h" />

@@ -8,12 +8,13 @@ class Position;
 
 class SnakeData : public Component {
 public:
+    SnakeData();
+    static const int startLength = 10;
     Direction direction = Direction::NONE;
     enum class State { DEAD, ALIVE };
     State state;
-    SnakeData();
     int girth = 10;
-    int length = 20;
+    int length = SnakeData::startLength;
     void addPosition(Position* position);
     std::list<Position*> positions;
 };
