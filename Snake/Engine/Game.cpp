@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-Game::Game(const char *title, Size windowSize) : windowSize(windowSize), title(title)
+Game::Game(const char *title, Size windowSize) : windowSize(windowSize), title(title), isRunning(true)
 {
     this->sdlInit();
     this->textureManager = TextureManager(this->renderer);
@@ -34,7 +34,7 @@ void Game::start()
 
     auto frameStart = SDL_GetTicks();
     auto lastUpdate = SDL_GetTicks();
-    while (this->isRunning()) {
+    while (this->isRunning) {
         this->instantiateGameObjectsPendingInstantiation();
         auto runningTime = SDL_GetTicks();
         auto elapsed = runningTime - lastUpdate;
@@ -51,11 +51,7 @@ void Game::start()
             this->render();
         }
     }
-}
-
-bool Game::isRunning()
-{
-    return true;
+    SDL_Quit();
 }
 
 void Game::handleInput()
@@ -67,6 +63,9 @@ void Game::handleInput()
         case SDL_KEYDOWN:
             keys.push_back(event.key.keysym);
             break;
+        case SDL_QUIT:
+            this->isRunning = false;
+            return;
         }
     }
 

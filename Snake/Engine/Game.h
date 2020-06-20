@@ -17,7 +17,6 @@ public:
     void sdlInit();
     virtual void init() = 0;
     void start();
-    bool isRunning();
     void handleInput();
     void update(int elapsed);
     void checkCollisions();
@@ -34,4 +33,5 @@ private:
     std::list<GameObject*> gameObjectsPendingDestruction;
     void destroyObjectsPendingDestruction();
     const char *title;
+    bool isRunning;
 };

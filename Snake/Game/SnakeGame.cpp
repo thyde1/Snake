@@ -18,7 +18,7 @@ void SnakeGame::init() {
     *score = 0;
 
     this->instantiateObject()
-        ->setGlobalPosition(400, 300)
+        ->setGlobalPosition(worldSize.w / 2, worldSize.h / 2)
         ->addComponent(snakeData)
         ->addCollider(ColliderType::ACTIVE, new Collider(10, 10))
         ->addUpdater(new Snake(snakeData, worldSize, score))
