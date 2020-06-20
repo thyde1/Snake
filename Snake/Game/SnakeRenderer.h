@@ -10,6 +10,7 @@ class Position;
 class SnakeRenderer : public Renderer {
 public:
     SnakeRenderer(SnakeData* snakeData);
+    ~SnakeRenderer();
     void render();
 private:
     void renderPosition(Position* position);

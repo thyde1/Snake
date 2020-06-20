@@ -6,6 +6,10 @@ SpriteRenderer::SpriteRenderer(const char *imagePath) : imagePath(imagePath), w(
 {
 }
 
+SpriteRenderer::~SpriteRenderer()
+{
+}
+
 void SpriteRenderer::render()
 {
     this->render(0);

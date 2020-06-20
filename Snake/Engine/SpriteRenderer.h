@@ -4,6 +4,7 @@ class SpriteRenderer : public Renderer
 {
 public:
     SpriteRenderer(const char *imagePath);
+    ~SpriteRenderer();
     void render();
     void render(const double rotation);
 private:

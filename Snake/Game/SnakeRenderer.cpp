@@ -1,7 +1,7 @@
+#include "SnakeRenderer.h"
+#include "../Engine/Position.h"
 #include<memory>
 #include "SDL_image.h"
-#include "../Engine/Position.h"
-#include "SnakeRenderer.h"
 #include "SnakeData.h"
 #include "Snake.h"
 #include "Direction.h"
@@ -9,7 +9,12 @@
 SDL_Texture* faceTexture;
 
 SnakeRenderer::SnakeRenderer(SnakeData *snakeData) : snakeData{ snakeData }, spriteRenderer { std::unique_ptr<SpriteRenderer>() }
-{}
+{
+}
+
+SnakeRenderer::~SnakeRenderer()
+{
+}
 
 void SnakeRenderer::render()
 {
