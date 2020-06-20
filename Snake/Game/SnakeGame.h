@@ -9,6 +9,7 @@ public:
     void init() override;
 private:
     static const int uiHeight = 50;
+    int score = 0;
     Size worldSize;
     FoodFactory foodFactory;
 };
