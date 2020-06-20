@@ -30,7 +30,7 @@ GameObject::~GameObject()
 
 void GameObject::handleInput(std::list<SDL_Keysym> keys)
 {
-	for (Updater* updater : this->updaters)
+	for (Updater *updater : this->updaters)
 	{
 		updater->handleInput(keys);
 	}
@@ -38,7 +38,7 @@ void GameObject::handleInput(std::list<SDL_Keysym> keys)
 
 void GameObject::update(int elapsed)
 {
-	for (Updater* updater : this->updaters)
+	for (Updater *updater : this->updaters)
 	{
 		updater->update(elapsed);
 	}
@@ -70,9 +70,9 @@ void GameObject::checkCollision(Collider* collider)
 	}
 }
 
-void GameObject::handleCollision(Collider* collider)
+void GameObject::handleCollision(Collider *collider)
 {
-	for (Updater* updater : this->updaters)
+	for (Updater *updater : this->updaters)
 	{
 		updater->handleCollision(collider);
 	}
@@ -80,20 +80,20 @@ void GameObject::handleCollision(Collider* collider)
 
 void GameObject::render()
 {
-	for (Renderer* renderer : this->renderers)
+	for (Renderer *renderer : this->renderers)
 	{
 		renderer->render();
 	}
 }
 
-GameObject* GameObject::addUpdater(Updater* updater)
+GameObject *GameObject::addUpdater(Updater *updater)
 {
 	this->addComponent(updater);
 	this->updaters.push_back(updater);
 	return this;
 }
 
-GameObject* GameObject::addRenderer(Renderer* renderer)
+GameObject *GameObject::addRenderer(Renderer *renderer)
 {
 	this->addComponent(renderer);
 	renderer->setSdlRenderer(this->sdlRenderer);
@@ -101,7 +101,7 @@ GameObject* GameObject::addRenderer(Renderer* renderer)
 	return this;
 }
 
-GameObject* GameObject::addCollider(ColliderType type, Collider* collider) {
+GameObject *GameObject::addCollider(ColliderType type, Collider *collider) {
 
 	this->addComponent(collider);
 	GameCollider* gameCollider = new GameCollider(type, collider);
@@ -109,14 +109,14 @@ GameObject* GameObject::addCollider(ColliderType type, Collider* collider) {
 	return this;
 }
 
-GameObject* GameObject::addComponent(Component* component)
+GameObject *GameObject::addComponent(Component *component)
 {
 	component->setGameObject(this);
 	this->components.push_back(component);
 	return this;
 }
 
-GameObject* GameObject::setGlobalPosition(int x, int y)
+GameObject *GameObject::setGlobalPosition(int x, int y)
 {
 	this->globalPosition = new Position(x, y);
 	return this;

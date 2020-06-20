@@ -78,7 +78,7 @@ void Game::handleInput()
 
 void Game::update(int elapsed)
 {
-	for(GameObject* gameObject : this->gameObjects)
+	for(GameObject *gameObject : this->gameObjects)
 	{
 		gameObject->update(elapsed);
 	}
@@ -86,9 +86,9 @@ void Game::update(int elapsed)
 
 void Game::checkCollisions()
 {
-	for (GameObject* gameObject : this->gameObjects)
+	for (GameObject *gameObject : this->gameObjects)
 	{
-		for (GameObject* other : this->gameObjects) {
+		for (GameObject *other : this->gameObjects) {
 			if (other != gameObject) {
 				gameObject->checkCollision(other);
 			}
