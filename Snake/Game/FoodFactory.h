@@ -10,6 +10,6 @@ public:
     FoodFactory(Size size);
     GameObject* create(GameObject *gameObject);
 private:
-    Size size;
+    Size worldSize;
 };
 

@@ -5,16 +5,17 @@
 #include "../Engine/Size.h"
 #include "FoodCollisionHandler.h"
 
-FoodFactory::FoodFactory(Size size) : size{ size }
+FoodFactory::FoodFactory(Size worldSize) : worldSize{ worldSize }
 {
 }
 
 GameObject* FoodFactory::create(GameObject* gameObject) {
-    auto newX = rand() % this->size.w;
-    auto newY = rand() % this->size.h;
+    const Size foodSize = { 10, 10 };
+    auto newX = rand() % this->worldSize.w - foodSize.w;
+    auto newY = rand() % this->worldSize.h - foodSize.h;
     return gameObject
         ->setGlobalPosition(newX, newY)
         ->addRenderer(new SpriteRenderer("assets/food.png"))
-        ->addCollider(ColliderType::PASSIVE, new Collider(10, 10))
+        ->addCollider(ColliderType::PASSIVE, new Collider(foodSize))
         ->addUpdater(new FoodCollisionHandler(*this));
 }

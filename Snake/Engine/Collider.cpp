@@ -1,12 +1,12 @@
 #include "Collider.h"
 #include "GameObject.h"
 
-Collider::Collider(int w, int h)
+Collider::Collider(int w, int h) : x(0), y(0), w(w), h(h)
 {
-    this->x = 0;
-    this->y = 0;
-    this->w = w;
-    this->h = h;
+}
+
+Collider::Collider(Size size) : Collider(size.w, size.h)
+{
 }
 
 void Collider::setGameObject(GameObject* gameObject)
