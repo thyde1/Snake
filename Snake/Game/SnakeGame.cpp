@@ -8,7 +8,7 @@
 #include "FoodFactory.h"
 #include "UiRenderer.h"
 
-SnakeGame::SnakeGame(Size windowSize) : Game(windowSize), worldSize({ windowSize.w, windowSize.h - SnakeGame::uiHeight }), foodFactory(FoodFactory(worldSize))
+SnakeGame::SnakeGame(Size windowSize) : Game("Snake", windowSize), worldSize({ windowSize.w, windowSize.h - SnakeGame::uiHeight }), foodFactory(FoodFactory(worldSize))
 {
 }
 

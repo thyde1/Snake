@@ -10,7 +10,7 @@
 
 class Game {
 public:
-    Game(Size windowSize);
+    Game(const char *title, Size windowSize);
     ~Game();
     TextureManager textureManager;
     Size windowSize;
@@ -33,4 +33,5 @@ private:
     void instantiateGameObjectsPendingInstantiation();
     std::list<GameObject*> gameObjectsPendingDestruction;
     void destroyObjectsPendingDestruction();
+    const char *title;
 };
