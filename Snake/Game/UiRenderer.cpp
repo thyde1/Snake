@@ -1,5 +1,5 @@
 #include "UiRenderer.h"
-#include <string>;
+#include <string>
 
 UiRenderer::UiRenderer(Position position, Size windowSize, const int *score) : position(position), windowSize(windowSize), score(score), font(TTF_OpenFont("verdana.ttf", 20))
 {
