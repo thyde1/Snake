@@ -5,10 +5,10 @@
 class SnakeGame : public Game
 {
 public:
-	SnakeGame(Size worldSize);
-	void init() override;
+    SnakeGame(Size worldSize);
+    void init() override;
 private:
-	Size worldSize;
-	FoodFactory foodFactory;
+    Size worldSize;
+    FoodFactory foodFactory;
 };
 

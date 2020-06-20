@@ -12,10 +12,10 @@ FoodCollisionHandler::FoodCollisionHandler(FoodFactory& foodFactory) : foodFacto
 
 void FoodCollisionHandler::handleCollision(Collider* collider)
 {
-	this->gameObject->game->destroyObject(this->gameObject);
+    this->gameObject->game->destroyObject(this->gameObject);
 
-	foodFactory.create(
-		this->gameObject->game
-			->instantiateObject()
-	);
+    foodFactory.create(
+        this->gameObject->game
+            ->instantiateObject()
+    );
 }

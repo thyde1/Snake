@@ -2,6 +2,6 @@
 
 void PointRenderer::render()
 {
-	SDL_SetRenderDrawColor(this->sdlRenderer, 255, 0, 0, 255);
-	SDL_RenderDrawPoint(this->sdlRenderer, this->gameObject->globalPosition->getX(), this->gameObject->globalPosition->getY());
+    SDL_SetRenderDrawColor(this->sdlRenderer, 255, 0, 0, 255);
+    SDL_RenderDrawPoint(this->sdlRenderer, this->gameObject->globalPosition->getX(), this->gameObject->globalPosition->getY());
 }

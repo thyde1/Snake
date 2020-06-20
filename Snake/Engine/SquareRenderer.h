@@ -3,5 +3,5 @@
 
 class SquareRenderer : public Renderer {
 public:
-	void render();
+    void render();
 };

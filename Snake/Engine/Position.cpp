@@ -3,8 +3,8 @@
 
 Position::Position(int x, int y)
 {
-	this->x = x;
-	this->y = y;
+    this->x = x;
+    this->y = y;
 }
 
 Position::~Position()
@@ -13,10 +13,10 @@ Position::~Position()
 
 int Position::getX()
 {
-	return this->x;
+    return this->x;
 }
 
 int Position::getY()
 {
-	return this->y;
+    return this->y;
 }

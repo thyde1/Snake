@@ -3,5 +3,5 @@
 
 class PointRenderer : public Renderer {
 public:
-	void render();
+    void render();
 };

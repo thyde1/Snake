@@ -8,7 +8,7 @@ class Collider;
 
 class Updater : public Component {
 public:
-	virtual void handleInput(std::list<SDL_Keysym> keys);
-	virtual void handleCollision(Collider* collider);
-	virtual void update(int elapsed);
+    virtual void handleInput(std::list<SDL_Keysym> keys);
+    virtual void handleCollision(Collider* collider);
+    virtual void update(int elapsed);
 };

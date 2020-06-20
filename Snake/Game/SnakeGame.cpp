@@ -13,21 +13,21 @@ SnakeGame::SnakeGame(Size windowSize) : Game(windowSize), worldSize({ windowSize
 }
 
 void SnakeGame::init() {
-	SnakeData *snakeData = new SnakeData();
-	int *score = new int;
-	*score = 0;
+    SnakeData *snakeData = new SnakeData();
+    int *score = new int;
+    *score = 0;
 
-	this->instantiateObject()
-		->setGlobalPosition(400, 300)
-		->addComponent(snakeData)
-		->addCollider(ColliderType::ACTIVE, new Collider(10, 10))
-		->addUpdater(new Snake(snakeData, worldSize, score))
-		->addRenderer(new SnakeRenderer(snakeData));
+    this->instantiateObject()
+        ->setGlobalPosition(400, 300)
+        ->addComponent(snakeData)
+        ->addCollider(ColliderType::ACTIVE, new Collider(10, 10))
+        ->addUpdater(new Snake(snakeData, worldSize, score))
+        ->addRenderer(new SnakeRenderer(snakeData));
 
-	auto foodFactory = new FoodFactory(worldSize);
-	foodFactory->create(this->instantiateObject());
+    auto foodFactory = new FoodFactory(worldSize);
+    foodFactory->create(this->instantiateObject());
 
-	Size uiHeight = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
-	Position uiPosition = Position(0, this->worldSize.h);
-	this->instantiateObject()->addRenderer(new UiRenderer(uiPosition, uiHeight, score));
+    Size uiHeight = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
+    Position uiPosition = Position(0, this->worldSize.h);
+    this->instantiateObject()->addRenderer(new UiRenderer(uiPosition, uiHeight, score));
 }

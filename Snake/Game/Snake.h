@@ -8,16 +8,16 @@ class SnakeData;
 
 class Snake : public Updater {
 public:
-	Snake(SnakeData* snakeData, const Size worldSize, int *score);
-	void init();
-	void update(int elapsed);
-	void handleInput(std::list<SDL_Keysym> keys);
-	void handleCollision(Collider* collider);
-	SnakeData* snakeData;
+    Snake(SnakeData* snakeData, const Size worldSize, int *score);
+    void init();
+    void update(int elapsed);
+    void handleInput(std::list<SDL_Keysym> keys);
+    void handleCollision(Collider* collider);
+    SnakeData* snakeData;
 private:
-	bool checkSelfCollision();
-	bool checkOutOfBounds();
-	bool checkCollision(Position* position);
-	Size worldSize;
-	int *score;
+    bool checkSelfCollision();
+    bool checkOutOfBounds();
+    bool checkCollision(Position* position);
+    Size worldSize;
+    int *score;
 };

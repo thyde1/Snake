@@ -2,6 +2,6 @@
 #include "Collider.h"
 
 GameCollider::GameCollider(ColliderType type, Collider* collider) {
-	this->type = type;
-	this->collider = collider;
+    this->type = type;
+    this->collider = collider;
 };

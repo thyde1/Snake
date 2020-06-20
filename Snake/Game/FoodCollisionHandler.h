@@ -5,8 +5,8 @@
 class FoodCollisionHandler : public Updater
 {
 public:
-	FoodCollisionHandler(FoodFactory& foodFactory);
-	void handleCollision(Collider* collider);
+    FoodCollisionHandler(FoodFactory& foodFactory);
+    void handleCollision(Collider* collider);
 private:
-	FoodFactory& foodFactory;
+    FoodFactory& foodFactory;
 };

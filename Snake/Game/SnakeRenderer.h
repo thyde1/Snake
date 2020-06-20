@@ -9,12 +9,12 @@ class Position;
 
 class SnakeRenderer : public Renderer {
 public:
-	SnakeRenderer(SnakeData* snakeData);
-	void render();
+    SnakeRenderer(SnakeData* snakeData);
+    void render();
 private:
-	void renderPosition(Position* position);
-	void renderHead();
+    void renderPosition(Position* position);
+    void renderHead();
 
-	std::unique_ptr<SpriteRenderer> spriteRenderer;
-	SnakeData *snakeData;
+    std::unique_ptr<SpriteRenderer> spriteRenderer;
+    SnakeData *snakeData;
 };
