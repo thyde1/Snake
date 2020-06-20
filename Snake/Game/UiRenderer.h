@@ -9,10 +9,10 @@
 class UiRenderer : public Renderer
 {
 public:
-    UiRenderer(const Position position, const WindowSize windowSize, const int *score);
+    UiRenderer(const Position position, const Size windowSize, const int *score);
     void render();
 private:
     const Position position;
-    const WindowSize windowSize;
+    const Size windowSize;
     const int* score;
 };

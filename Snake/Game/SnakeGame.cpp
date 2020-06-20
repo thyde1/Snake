@@ -8,12 +8,15 @@
 #include "FoodFactory.h"
 #include "UiRenderer.h"
 
+SnakeGame::SnakeGame(Size windowSize) : Game(windowSize), worldSize({ windowSize.w, windowSize.h - 100 }), foodFactory(FoodFactory(worldSize))
+{
+}
+
 void SnakeGame::init() {
 	SnakeData *snakeData = new SnakeData();
 	int *score = new int;
 	*score = 0;
 
-	Size worldSize = { this->windowSize.w, this->windowSize.h - 100 };
 	this->instantiateObject()
 		->setGlobalPosition(400, 300)
 		->addComponent(snakeData)
@@ -24,5 +27,7 @@ void SnakeGame::init() {
 	auto foodFactory = new FoodFactory(worldSize);
 	foodFactory->create(this->instantiateObject());
 
-	this->instantiateObject()->addRenderer(new UiRenderer(Position(0, 500), { 800, 100 }, score));
+	Size uiHeight = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
+	Position uiPosition = Position(0, this->worldSize.h);
+	this->instantiateObject()->addRenderer(new UiRenderer(uiPosition, uiHeight, score));
 }

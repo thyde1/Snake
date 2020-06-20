@@ -6,15 +6,14 @@
 #include <list>
 #include "GameObject.h"
 #include "TextureManager.h"
-
-struct WindowSize { int w; int h; };
+#include "Size.h"
 
 class Game {
 public:
-	Game();
+	Game(Size windowSize);
 	~Game();
 	TextureManager textureManager;
-	WindowSize windowSize = { 800, 600 };
+	Size windowSize;
 	void sdlInit();
 	virtual void init() = 0;
 	void start();

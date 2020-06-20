@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "TextureManager.h"
 
-Game::Game()
+Game::Game(Size windowSize) : windowSize(windowSize)
 {
 	this->sdlInit();
 	this->textureManager = TextureManager(this->renderer);

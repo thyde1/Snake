@@ -2,7 +2,7 @@
 #include <string>;
 #include "SDL_ttf.h"
 
-UiRenderer::UiRenderer(Position position, WindowSize windowSize, const int *score) : position { position }, windowSize{ windowSize }, score { score }
+UiRenderer::UiRenderer(Position position, Size windowSize, const int *score) : position { position }, windowSize{ windowSize }, score { score }
 {
 }
 
