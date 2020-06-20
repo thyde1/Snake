@@ -24,8 +24,7 @@ void SnakeGame::init() {
         ->addUpdater(new Snake(snakeData, worldSize, score))
         ->addRenderer(new SnakeRenderer(snakeData));
 
-    auto foodFactory = new FoodFactory(worldSize);
-    foodFactory->create(this->instantiateObject());
+    this->foodFactory.create(this->instantiateObject());
 
     Size uiHeight = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
     Position uiPosition = Position(0, this->worldSize.h);
