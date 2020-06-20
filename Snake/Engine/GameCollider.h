@@ -10,6 +10,7 @@ enum class ColliderType
 class GameCollider {
 public:
     GameCollider(ColliderType type, Collider* collider);
+    ~GameCollider();
     ColliderType type;
     Collider* collider;
 };

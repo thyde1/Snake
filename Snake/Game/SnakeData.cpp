@@ -6,6 +6,11 @@ SnakeData::SnakeData() : direction{ Direction::NONE }, state{ SnakeData::State::
 {
 }
 
+SnakeData::~SnakeData()
+{
+    
+}
+
 void SnakeData::addPosition(Position* position)
 {
     if (this->positions.size() >= this->length) {

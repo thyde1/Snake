@@ -40,7 +40,7 @@ void Snake::update(int elapsed)
         this->gameObject->globalPosition = new Position(currentPosition->getX() + (int)(elapsed * speed * 0.1), currentPosition->getY());
         break;
     default:
-        this->gameObject->globalPosition = new Position(currentPosition->getX(), currentPosition->getY());
+        return;
     }
 
     if (this->checkSelfCollision() || this->checkOutOfBounds()) {

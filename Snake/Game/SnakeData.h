@@ -9,6 +9,7 @@ class Position;
 class SnakeData : public Component {
 public:
     SnakeData();
+    ~SnakeData();
     static const int startLength = 10;
     Direction direction = Direction::NONE;
     enum class State { DEAD, ALIVE };
