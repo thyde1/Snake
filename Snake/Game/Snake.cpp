@@ -8,7 +8,7 @@
 #include "SnakeData.h"
 #include "Direction.h"
 
-const int speed = 2;
+const int speed = 4;
 
 Snake::Snake(SnakeData *snakeData, const Size worldSize, int *score) : snakeData { snakeData }, worldSize { worldSize }, score { score }
 {
@@ -153,3 +153,4 @@ bool Snake::checkCollision(Position* position)
     auto girth = this->snakeData->girth;
     return Collider::checkCollision(girth, girth, currentPosition->getX(), currentPosition->getY(), girth, girth, position->getX(), position->getY());
 }
+
