@@ -2,7 +2,7 @@
 #include <string>
 
 
-TextRenderer::TextRenderer(const char *text, SDL_Color color) : text(text), color(color), font(TTF_OpenFont("verdana.ttf", 20))
+TextRenderer::TextRenderer(const char *text, SDL_Color color) : text(text), color(color), font(TTF_OpenFont("assets/verdana.ttf", 20))
 {
 }
 
