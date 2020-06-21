@@ -1,7 +1,7 @@
 #include "ScoreRenderer.h"
 #include <string>
 
-ScoreRenderer::ScoreRenderer(int &score) : score(score)
+ScoreRenderer::ScoreRenderer(int &score) : TextRenderer("", { 255, 255, 255, 255 }), score(score)
 {
 }
 

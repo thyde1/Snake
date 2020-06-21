@@ -7,10 +7,12 @@
 class TextRenderer : public Renderer {
 public:
     TextRenderer();
-    TextRenderer(const char *text);
+    TextRenderer(SDL_Color color);
+    TextRenderer(const char *text, SDL_Color color);
     ~TextRenderer();
     virtual void render();
     const char *text;
 private:
     TTF_Font *font;
+    SDL_Color color;
 };

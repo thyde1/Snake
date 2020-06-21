@@ -2,11 +2,15 @@
 #include <string>
 
 
-TextRenderer::TextRenderer(const char *text) : text(text), font(TTF_OpenFont("verdana.ttf", 20))
+TextRenderer::TextRenderer(const char *text, SDL_Color color) : text(text), color(color), font(TTF_OpenFont("verdana.ttf", 20))
 {
 }
 
-TextRenderer::TextRenderer() : TextRenderer("")
+TextRenderer::TextRenderer(SDL_Color color) : TextRenderer("", color)
+{
+}
+
+TextRenderer::TextRenderer() : TextRenderer({ 0, 0, 0, 255 })
 {
 }
 
@@ -17,7 +21,7 @@ TextRenderer::~TextRenderer()
 
 void TextRenderer::render()
 {
-    auto textSurface = TTF_RenderText_Blended_Wrapped(this->font, this->text, { 255, 0, 0, 255 }, 400);
+    auto textSurface = TTF_RenderText_Blended_Wrapped(this->font, this->text, this->color, 400);
     auto textTexture = SDL_CreateTextureFromSurface(this->sdlRenderer, textSurface);
     int w, h;
     SDL_QueryTexture(textTexture, NULL, NULL, &w, &h);
