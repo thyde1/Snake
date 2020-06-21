@@ -176,6 +176,7 @@
   <ItemGroup>
     <ClInclude Include="Engine\Collider.h" />
     <ClInclude Include="Engine\Component.h" />
+    <ClInclude Include="Engine\Renderers\Text\TextAlignment.h" />
     <ClInclude Include="Engine\Size.h" />
     <ClInclude Include="Engine\Renderers\TextRenderer.h" />
     <ClInclude Include="Game\FoodFactory.h" />

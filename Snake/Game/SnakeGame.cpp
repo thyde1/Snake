@@ -42,7 +42,7 @@ void SnakeGame::init()
     ScoreBar::create(this->instantiateObject(), this->score, uiPosition, uiSize);
     this->instantiateObject()
         ->addRenderer(new GameOverTextRenderer(this->score, this->snakeData.state))
-        ->setGlobalPosition(snake->globalPosition->x, snake->globalPosition->y);
+        ->setGlobalPosition(snake->globalPosition->x, snake->globalPosition->y - 50);
 }
 
 void SnakeGame::destroyEverything()

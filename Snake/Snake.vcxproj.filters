@@ -152,6 +152,7 @@
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Renderers\TextRenderer.h" />
+    <ClInclude Include="Engine\Renderers\Text\TextAlignment.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
