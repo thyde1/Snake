@@ -1,6 +1,6 @@
 #include "SDL.h"
 #include "SpriteRenderer.h"
-#include "Game.h"
+#include "../Game.h"
 
 SpriteRenderer::SpriteRenderer(const char *imagePath) : imagePath(imagePath), w(0), h(0), texture(NULL), textureRect{ NULL }
 {

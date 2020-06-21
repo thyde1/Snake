@@ -2,7 +2,7 @@
 #include "../Engine/Game.h"
 #include "../Engine/GameObject.h"
 #include "../Engine/GameCollider.h"
-#include "../Engine/SpriteRenderer.h"
+#include "../Engine/Renderers/SpriteRenderer.h"
 #include "FoodCollisionHandler.h"
 #include "FoodFactory.h"
 

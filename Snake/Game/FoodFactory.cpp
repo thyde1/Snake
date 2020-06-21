@@ -1,5 +1,5 @@
 #include "FoodFactory.h"
-#include "../Engine/SpriteRenderer.h"
+#include "../Engine/Renderers/SpriteRenderer.h"
 #include "../Engine/Collider.h"
 #include "../Engine/GameCollider.h"
 #include "../Engine/Size.h"

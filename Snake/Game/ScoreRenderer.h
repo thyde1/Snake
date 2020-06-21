@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Engine/TextRenderer.h"
+#include "../Engine/Renderers/TextRenderer.h"
 
 class ScoreRenderer : public TextRenderer {
 public:

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "SDL_ttf.h"
-#include "../Engine/Renderer.h"
-#include"Position.h"
+#include "../Renderer.h"
+#include "../Position.h"
 
 class TextRenderer : public Renderer {
 public:

@@ -149,7 +149,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\Collider.cpp" />
     <ClCompile Include="Engine\Component.cpp" />
-    <ClCompile Include="Engine\TextRenderer.cpp" />
+    <ClCompile Include="Engine\Renderers\TextRenderer.cpp" />
     <ClCompile Include="Game\FoodFactory.cpp" />
     <ClCompile Include="Game\FoodCollisionHandler.cpp" />
     <ClCompile Include="Engine\Game.cpp" />
@@ -162,14 +162,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Position.cpp" />
     <ClCompile Include="Game\Snake.cpp" />
-    <ClCompile Include="Engine\PointRenderer.cpp" />
+    <ClCompile Include="Engine\Renderers\PointRenderer.cpp" />
     <ClCompile Include="Engine\Renderer.cpp" />
     <ClCompile Include="Game\SnakeData.cpp" />
     <ClCompile Include="Game\SnakeGame.cpp" />
     <ClCompile Include="Game\SnakeRenderer.cpp" />
-    <ClCompile Include="Engine\SquareRenderer.cpp" />
+    <ClCompile Include="Engine\Renderers\SquareRenderer.cpp" />
     <ClCompile Include="Engine\Updater.cpp" />
-    <ClCompile Include="Engine\SpriteRenderer.cpp" />
+    <ClCompile Include="Engine\Renderers\SpriteRenderer.cpp" />
     <ClCompile Include="Engine\TextureManager.cpp" />
     <ClCompile Include="Game\UiRenderer.cpp" />
   </ItemGroup>
@@ -177,7 +177,7 @@
     <ClInclude Include="Engine\Collider.h" />
     <ClInclude Include="Engine\Component.h" />
     <ClInclude Include="Engine\Size.h" />
-    <ClInclude Include="Engine\TextRenderer.h" />
+    <ClInclude Include="Engine\Renderers\TextRenderer.h" />
     <ClInclude Include="Game\FoodFactory.h" />
     <ClInclude Include="Game\Direction.h" />
     <ClInclude Include="Game\FoodCollisionHandler.h" />
@@ -189,15 +189,15 @@
     <ClInclude Include="Game\ScoreBar.h" />
     <ClInclude Include="Game\ScoreRenderer.h" />
     <ClInclude Include="Game\Snake.h" />
-    <ClInclude Include="Engine\PointRenderer.h" />
+    <ClInclude Include="Engine\Renderers\PointRenderer.h" />
     <ClInclude Include="Engine\Position.h" />
     <ClInclude Include="Engine\Renderer.h" />
     <ClInclude Include="Game\SnakeGame.h" />
     <ClInclude Include="Game\SnakeData.h" />
     <ClInclude Include="Game\SnakeRenderer.h" />
-    <ClInclude Include="Engine\SquareRenderer.h" />
+    <ClInclude Include="Engine\Renderers\SquareRenderer.h" />
     <ClInclude Include="Engine\Updater.h" />
-    <ClInclude Include="Engine\SpriteRenderer.h" />
+    <ClInclude Include="Engine\Renderers\SpriteRenderer.h" />
     <ClInclude Include="Engine\TextureManager.h" />
     <ClInclude Include="Game\UiRenderer.h" />
   </ItemGroup>

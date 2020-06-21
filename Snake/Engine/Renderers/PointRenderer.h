@@ -1,5 +1,5 @@
 #pragma once
-#include "Renderer.h"
+#include "../Renderer.h"
 
 class PointRenderer : public Renderer {
 public:

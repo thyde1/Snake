@@ -2,7 +2,7 @@
 
 #include<memory>
 #include "../Engine/Renderer.h"
-#include "../Engine/SpriteRenderer.h"
+#include "../Engine/Renderers/SpriteRenderer.h"
 
 class SnakeData;
 class Position;

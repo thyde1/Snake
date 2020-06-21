@@ -32,12 +32,6 @@
     <ClCompile Include="Engine\GameObject.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\PointRenderer.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\SquareRenderer.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Updater.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
@@ -62,9 +56,6 @@
     <ClCompile Include="Game\SnakeRenderer.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\SpriteRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -80,9 +71,6 @@
     <ClCompile Include="Game\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\TextRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\GameOverTextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -90,6 +78,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\ScoreRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Renderers\PointRenderer.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Renderers\SpriteRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Renderers\SquareRenderer.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Renderers\TextRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,12 +107,6 @@
       <Filter>Source Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Engine\GameObject.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\PointRenderer.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\SquareRenderer.h">
       <Filter>Source Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Updater.h">
@@ -139,7 +133,6 @@
     <ClInclude Include="Game\SnakeRenderer.h">
       <Filter>Source Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\SpriteRenderer.h" />
     <ClInclude Include="Engine\TextureManager.h" />
     <ClInclude Include="Game\FoodCollisionHandler.h">
       <Filter>Source Files\Game</Filter>
@@ -148,10 +141,17 @@
     <ClInclude Include="Engine\Size.h" />
     <ClInclude Include="Game\FoodFactory.h" />
     <ClInclude Include="Game\GameState.h" />
-    <ClInclude Include="Engine\TextRenderer.h" />
     <ClInclude Include="Game\GameOverTextRenderer.h" />
     <ClInclude Include="Game\ScoreBar.h" />
     <ClInclude Include="Game\ScoreRenderer.h" />
+    <ClInclude Include="Engine\Renderers\PointRenderer.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Renderers\SpriteRenderer.h" />
+    <ClInclude Include="Engine\Renderers\SquareRenderer.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Renderers\TextRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
