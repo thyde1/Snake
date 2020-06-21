@@ -10,12 +10,10 @@
 class UiRenderer : public Renderer
 {
 public:
-    UiRenderer(const Position position, const Size windowSize, const int *score);
+    UiRenderer(const Position position, const Size windowSize);
     ~UiRenderer();
     void render();
 private:
     const Position position;
     const Size windowSize;
-    const int *score;
-    TTF_Font *font;
 };

@@ -6,6 +6,7 @@
 #include "Snake.h"
 #include "FoodFactory.h"
 #include "GameState.h"
+#include "ScoreBar.h"
 #include "UiRenderer.h"
 #include "GameOverTextRenderer.h"
 
@@ -34,11 +35,11 @@ void SnakeGame::init()
 
     this->foodFactory.create(this->instantiateObject());
 
-    Size uiHeight = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
+    Size uiSize = { this->windowSize.w, this->windowSize.h - this->worldSize.h };
     Position uiPosition = Position(0, this->worldSize.h);
 
     // UI
-    this->instantiateObject()->addRenderer(new UiRenderer(uiPosition, uiHeight, &this->score));
+    ScoreBar::create(this->instantiateObject(), this->score, uiPosition, uiSize);
     this->instantiateObject()
         ->addRenderer(new GameOverTextRenderer(this->score, this->snakeData.state))
         ->setGlobalPosition(snake->globalPosition->x, snake->globalPosition->y);
