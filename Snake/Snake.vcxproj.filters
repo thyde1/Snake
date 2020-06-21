@@ -80,6 +80,12 @@
     <ClCompile Include="Game\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\TextRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\GameOverTextRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Collider.h">
@@ -136,6 +142,8 @@
     <ClInclude Include="Engine\Size.h" />
     <ClInclude Include="Game\FoodFactory.h" />
     <ClInclude Include="Game\GameState.h" />
+    <ClInclude Include="Engine\TextRenderer.h" />
+    <ClInclude Include="Game\GameOverTextRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

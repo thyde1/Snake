@@ -149,11 +149,13 @@
   <ItemGroup>
     <ClCompile Include="Engine\Collider.cpp" />
     <ClCompile Include="Engine\Component.cpp" />
+    <ClCompile Include="Engine\TextRenderer.cpp" />
     <ClCompile Include="Game\FoodFactory.cpp" />
     <ClCompile Include="Game\FoodCollisionHandler.cpp" />
     <ClCompile Include="Engine\Game.cpp" />
     <ClCompile Include="Engine\GameCollider.cpp" />
     <ClCompile Include="Engine\GameObject.cpp" />
+    <ClCompile Include="Game\GameOverTextRenderer.cpp" />
     <ClCompile Include="Game\GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Engine\Position.cpp" />
@@ -173,12 +175,14 @@
     <ClInclude Include="Engine\Collider.h" />
     <ClInclude Include="Engine\Component.h" />
     <ClInclude Include="Engine\Size.h" />
+    <ClInclude Include="Engine\TextRenderer.h" />
     <ClInclude Include="Game\FoodFactory.h" />
     <ClInclude Include="Game\Direction.h" />
     <ClInclude Include="Game\FoodCollisionHandler.h" />
     <ClInclude Include="Engine\Game.h" />
     <ClInclude Include="Engine\GameObject.h" />
     <ClInclude Include="Engine\GameCollider.h" />
+    <ClInclude Include="Game\GameOverTextRenderer.h" />
     <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Game\Snake.h" />
     <ClInclude Include="Engine\PointRenderer.h" />

@@ -2,8 +2,7 @@
 #include "Component.h"
 #include "Size.h"
 
-class Collider : public Component
-{
+class Collider : public Component {
 public:
     Collider(int w, int h);
     Collider(Size size);
